@@ -1,12 +1,9 @@
 # Palette
-Input a color palette and see brands that have similar palettes. Very early WIP. Run `yarn start` in `palette/`.
+Input a color palette and see brands that have similar palettes.  
 
-### Roadmap
-[x] Logo fetching (~30min)
-[x] Nearest logo demo (~3hrs)
+Run `yarn start` in `palette/`.  
 
-[ ] Multiple logos
-[ ] Create UI
+![ezgif-5-2874163cf874](https://user-images.githubusercontent.com/13123651/78906490-68f24600-7a4d-11ea-9449-33b8a4515962.gif)
 
 ### Color quantization
 There is a blog post about retrieving dominant colors from an image using
@@ -20,14 +17,19 @@ palette generation packages on Github use this method and also remove
 black/white from consideration. However, in my case I do consider white/black
 backgrounds as part of the palette.
 
-[1] https://tatasz.github.io/dominant_colors/
-[2] https://en.m.wikipedia.org/wiki/Color_difference
-[3] https://alexwlchan.net/2019/08/finding-tint-colours-with-k-means/
+[1] https://tatasz.github.io/dominant_colors/  
+[2] https://en.m.wikipedia.org/wiki/Color_difference  
+[3] https://alexwlchan.net/2019/08/finding-tint-colours-with-k-means/  
 
 ### Color palette comparison
 Pre-ordering and compare pair-wise? Counterexample: RGB, GBW.
 
-Right now I'm just using a hacky heuristic. I compute the distances between all colors of both palettes pairwise using a CIE color differencing algorithm (on CIELAB space). Then I choose one palette (the user specified one), and for each color in that palette, I choose its minimum pairwise distance. Then I sum up the minumum pairwise distances of all colors in that palette and treat that as the distance between the two palettes.
+Right now I'm just using a hacky heuristic. I compute the distances between all
+colors of both palettes pairwise using a CIE color differencing algorithm (on
+CIELAB space). Then I choose one palette (the user specified one), and for each
+color in that palette, I choose its minimum pairwise distance. Then I sum up the
+minumum pairwise distances of all colors in that palette and treat that as the
+distance between the two palettes.
 
 ### Source of Brands
 I'm currently using a Forbes 2000 list for companies. I then use the super
@@ -49,3 +51,10 @@ considerable size. Right now, about 6.6MB for 1000 images. Could be ~6GB for 1m.
 Would likely have to serve them on a different provider. Also, the JSON for
 comparison would likely have to be chunkified (into different quad segments) and
 loaded by request.
+
+### Todo
+[x] Logo fetching (~30min)  
+[x] Nearest logo demo (~3hrs)  
+[ ] Multiple logos  
+[ ] Create UI  
+
