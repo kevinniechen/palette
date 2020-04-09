@@ -13,3 +13,10 @@ backgrounds as part of the palette.
 [1] https://tatasz.github.io/dominant_colors/
 [2] https://en.m.wikipedia.org/wiki/Color_difference
 [3] https://alexwlchan.net/2019/08/finding-tint-colours-with-k-means/
+
+### How do you compare color palettes?
+Trying every combination and taking min? Too complex.
+
+Pre-ordering and compare pair-wise? Counterexample: RGB, GBW.
+
+Hacky heuristic: just pick the closest one each time.
